@@ -4,7 +4,9 @@ new Vue({
   data() {
     return {
       name: 'Lebron James',
-      wechat: 'kingjames666'
+      wechat: 'kingjames666',
+      website: 'https://www.baidu.com',
+      websiteTag: '<a href="https://www.youtube.com">youtube</a>'
     };
   },
   methods: {
