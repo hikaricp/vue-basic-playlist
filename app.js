@@ -6,5 +6,18 @@ new Vue({
       name: 'Lebron James',
       wechat: 'kingjames666'
     };
+  },
+  methods: {
+    // greet: function () {
+    //   return "Good night " + this.name;
+    // }
+
+    greet(time) {
+      return `Goog ${time} ${this.name}`;
+    },
+
+    haveLunch() {
+      return `吃过午饭了吗?`;
+    }
   }
 })
