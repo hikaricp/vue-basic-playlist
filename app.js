@@ -1,25 +1,22 @@
-// 实例化 Vue 对象
 new Vue({
   el: '#vue-app',
   data() {
     return {
-      name: 'Lebron James',
-      wechat: 'kingjames666',
-      website: 'https://www.baidu.com',
-      websiteTag: '<a href="https://www.youtube.com">youtube</a>'
-    };
+      age: 30,
+      x: 0,
+      y: 0
+    }
   },
   methods: {
-    // greet: function () {
-    //   return "Good night " + this.name;
-    // }
-
-    greet(time) {
-      return `Goog ${time} ${this.name}`;
+    add(inc) {
+      this.age += inc;
     },
-
-    haveLunch() {
-      return `吃过午饭了吗?`;
+    subtract(dec) {
+      this.age -= dec;
+    },
+    updateXY(event) {
+      this.x = event.offsetX;
+      this.y = event.offsetY;
     }
   }
 })
