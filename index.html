@@ -12,18 +12,16 @@
 
 <body>
   <div id="vue-app">
-    <h1>动态样式绑定 两种方式</h1>
-    <!-- <h2>示例1 属性绑定</h2>
-    <div @click="myChangeColor = !myChangeColor" :class="{changeColor: myChangeColor}">
-      <span>Hello</span>
-    </div> -->
+    <h1>v-if指令</h1>
+    <button @click="error = !error">toggle</button>
+    <button @click="success = !success">success</button>
+    <!-- <p v-if="error">error: 如果条件为真，就显示</p>
+    <p v-else-if="success">success: 如果条件为真，就显示</p>
+    <p v-else>others</p> -->
 
-    <h2>示例2 计算属性绑定</h2>
-    <button @click="myChangeColor = !myChangeColor">changeColor</button>
-    <button @click="myChangeLength = !myChangeLength">changeLength</button>
-    <div :class="compClasses">
-      <span>Hello</span>
-    </div>
+    <!-- v-show -->
+    <p v-show="error">网络连接错误：404</p>
+    <p v-show="success">网络连接成功：200</p>
   </div>
 </body>
 <script src="app.js"></script>
