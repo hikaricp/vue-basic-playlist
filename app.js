@@ -2,25 +2,29 @@ new Vue({
   el: '#vue-app',
   data() {
     return {
-      name: '',
-      age: 20
+      a: 0,
+      b: 0,
+      age: 23
     }
   },
   methods: {
-    getName() {
-      // console.log(this.$refs.name.value);
-      this.name = this.$refs.name.value;
-    },
-    getAge() {
-      this.age = this.$refs.age.value;
-    }
+    // addToA() {
+    //   console.log("addAgeToA");
+    //   return this.a + this.age;
+    // },
+    // addToB() {
+    //   console.log("addAgeToB");
+    //   return this.b + this.age;
+    // }
   },
-  watch: {
-    name(val, oldVal) {
-      console.log(val, oldVal);
+  computed: {
+    addToA() {
+      console.log("addAgeToA");
+      return this.a + this.age;
     },
-    age(val, oldVal) {
-      console.log(val, oldVal);
+    addToB() {
+      console.log("addAgeToB");
+      return this.b + this.age;
     }
   }
 })

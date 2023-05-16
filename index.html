@@ -10,13 +10,19 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>watch</h1>
-      <label>姓名</label>
-      <input type="text" ref="name" @keyup="getName"/>
-      <span>{{ name }}</span>
-      <label>年龄</label>
-      <input type="text" ref="age" @keyup="getAge"/>
-      <span>{{ age }}</span>
+      <h1>computed</h1>
+      <button @click="a++">add To A</button>
+      <button @click="b++">add To B</button>
+      <p>A - {{ a }}</p>
+      <p>B - {{ b }}</p>
+
+      <!-- methods -->
+      <!-- <p>Age + A = {{ addToA() }}</p> -->
+      <!-- <p>Age + B = {{ addToB() }}</p> -->
+
+      <!-- computed -->
+      <p>Age + A = {{ addToA }}</p>
+      <p>Age + B = {{ addToB }}</p>
     </div>
   </body>
   <script src="app.js"></script>
