@@ -1,34 +1,38 @@
-const one = new Vue({
-  el: '#vue-app-one',
+new Vue({
+  el: '#vue-app',
   data() {
     return {
-      title: 'this is app one'
+      todos: [],
+      todo: {
+        title: '',
+        completed: false
+      }
     }
   },
-  computed: {
-    greet() {
-      return 'Hello App one'
-    }
-  }
-});
-
-const two = new Vue({
-  el: '#vue-app-two',
-  data() {
-    return {
-      title: 'this is app two'
-    }
+  mounted() {
+    fetch('http://jsonplaceholder.typicode.com/todos')
+      .then(res => {
+        return res.json();
+      }).then(todos => {
+        this.todos = todos;
+      });
   },
   methods: {
-    changeAppOneTitle() {
-      one.title = '这是 APP one 的 title';
-    }
-  },
-  computed: {
-    greet() {
-      return 'Hello App two'
+    onSubmit() {
+      fetch('http://jsonplaceholder.typicode.com/todos', {
+        method: 'POST',
+        body: JSON.stringify(this.todo),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(todo => {
+          // console.log(todo);
+          this.todos.unshift(todo);
+        })
     }
   }
 });
-
-two.title = '这是 APP two 的 title'
